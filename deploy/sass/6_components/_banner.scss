@@ -1,0 +1,92 @@
+.rkod{
+    @include e('banner'){
+        @include flexbox(column, wrap, center, center, center);
+        @include transition;
+        background-image: url('../img/bg_banner.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: auto;
+        min-height: 700px;
+
+        .wrapper{
+            @include flexbox(column, wrap, center, center, center);
+        }
+
+        @include e('logo'){
+            @include flexbox(row, nowrap, center, center, center);
+        }
+
+        @include e('sep'){
+            width: 3px;
+            height: 50px;
+            background-color: #FFF;
+            display: block;
+            margin: 0px 25px;
+        }
+
+        @include e('slogan'){
+            @include fonte($second-font, 400, 29px, #FFF);
+            display: block;
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+            margin: 35px 0px;
+        }
+
+        @include e('arrow'){
+            @include flexbox(row, wrap, center, center, center);
+            @include border-radius(100%);
+            background-color: $color-red;
+            width: 80px;
+            height: 80px;
+            cursor: pointer;
+            &:before{
+                @include set-icon($fa-var-angle-down, 38px, 900, #FFF);
+            }
+
+        }
+
+        @include res-max(300px) {
+            min-height: 400px;
+            @include e('logo'){
+                display: none;
+            }
+        }
+
+        @include res-between(301px, 400px) {
+            min-height: 400px;
+            @include e('logo'){
+                display: none;
+            }
+        }
+        @include res-between(401px, 500px) {
+            min-height: 400px;
+            @include e('logo'){
+                display: none;
+            }
+        }
+        @include res-between(501px, 600px) {
+            min-height: 400px;
+            @include e('logo'){
+                display: none;
+            }
+        }
+        @include res-between(601px, 700px) {
+            min-height: 400px;
+            @include e('logo'){
+                display: none;
+            }
+        }
+        @include res-between(701px, 800px) {
+            min-height: 400px;
+            @include e('logo'){
+                display: none;
+            }
+        }
+        @include res-between(801px, 900px) {}
+        @include res-between(901px, 1000px) {}
+        @include res-min(1001px) {}
+
+    }
+}

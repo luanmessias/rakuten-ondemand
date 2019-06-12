@@ -1,0 +1,129 @@
+.rkod{
+    @include e('title'){
+        @include flexbox(column, wrap, flex-start, center, center);
+        @include fonte($second-font, 800, 56px, #000);
+        text-align: center;
+        width: 100%;
+        display: block;
+        text-transform: uppercase;
+
+        &:after{
+            content: "";
+            width: 65px;
+            height: 8px;
+            background-color: #000;
+            display: block;
+            margin: 10px auto;
+        }
+
+    }
+
+    @include e('how'){
+        position: relative;
+        height: 1000px;
+        overflow: hidden;
+
+        &:before{
+            content: "";
+            width: 100%;
+            position: absolute;
+            bottom: 0px;
+            background-color: $color-gray-light;
+            height: 105px;
+        }
+
+        .wrapper {
+            @include flexbox(row, wrap, space-between, flex-start, flex-start);
+
+            > div {
+                width: calc(100% / 2 - 10px);
+                overflow: hidden;
+            }
+        }
+
+        @include e('img'){
+            position: absolute;
+            left: -470px;
+            top: 150px;
+            width: auto;
+            height: 850px;
+        }
+
+        @include e('truck'){
+           
+        }
+
+        @include e('info'){
+            
+        }
+
+        @include e('item'){
+            @include flexbox(row, nowrap, flex-start, flex-start, flex-start);
+            @include box-sizing;
+            width: 100%;
+            margin-bottom: 20px;
+            padding-top: 10px;
+            &:before{
+                @include border-radius(20px);
+                @include box-sizing;
+                content: "";
+                display: block;
+                width: 90px;
+                height: 90px;
+                background-color: $color-red;
+                margin-right: 10px;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+
+            @include e('cont'){
+                width: calc(100% - 100px);
+            }
+
+            ul{
+                @include box-sizing;
+                margin: 10px 0px;
+                li{
+                    @include box-sizing;
+                    width: 100%;
+                }
+            }
+
+            @include m('box'){
+                &:before{
+                    background-image: url('../img/icon_box.png');
+                }
+            }
+
+            @include m('money'){
+                &:before{
+                    background-image: url('../img/icon_money.png');
+                }
+            }
+
+            @include m('calc'){
+                &:before{
+                    background-image: url('../img/icon_calc.png');
+                }
+            }
+
+            @include m('file'){
+                &:before{
+                    background-image: url('../img/icon_file.png');
+                }
+            }
+
+            @include m('location'){
+                &:before{
+                    background-image: url('../img/icon_location.png');
+                }
+            }
+
+
+
+
+
+        }
+
+    }
+}

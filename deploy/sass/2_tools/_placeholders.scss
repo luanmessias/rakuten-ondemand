@@ -1,0 +1,99 @@
+%display-flex {
+    -webkit-display: flex;
+    -moz-display: flex;
+    -ms-display: flex;
+    -o-display: flex;
+    display: flex;
+}
+
+%clearfix {
+    &:after,
+    &:before{
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+%center-cont{
+    -webkit-display: flex;
+    -moz-display: flex;
+    -ms-display: flex;
+    -o-display: flex;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+%box-sizing {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+%remove-shadow{
+    -webkit-box-shadow:0 0 0 transparent;
+    -moz-box-shadow:0 0 0 transparent;
+    box-shadow:0 0 0 transparent;
+}
+
+%remove-textshadow{
+    -webkit-text-shadow: none;
+    -moz-text-shadow: none;
+    -ms-text-shadow: none;
+    -o-text-shadow: none;
+    text-shadow: none;
+}
+
+.dn{
+    display: none;
+}
+
+.rkbt{
+    @include box-sizing;
+    @include border-radius(50px);
+    @include transition;
+    padding: 5px 25px;
+    border: 2px solid transparent;
+    &:hover{
+        text-decoration: none;
+    }
+
+    @include m('one'){
+        @include fonte($second-font, bold, 14px, $color-red);
+        border-color: $color-red;  
+
+        &:hover{
+            background-color: $color-red;
+            color: #FFF;
+        } 
+    }
+
+    @include m('two'){
+        @include fonte($second-font, 400, 14px, #FFF);
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#bf0000+0,bf0000+50,da3600+100 */
+        background: rgb(191,0,0); /* Old browsers */
+        background: -moz-linear-gradient(left, rgba(191,0,0,1) 0%, rgba(191,0,0,1) 50%, rgba(218,54,0,1) 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(left, rgba(191,0,0,1) 0%,rgba(191,0,0,1) 50%,rgba(218,54,0,1) 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to right, rgba(191,0,0,1) 0%,rgba(191,0,0,1) 50%,rgba(218,54,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bf0000', endColorstr='#da3600',GradientType=1 ); /* IE6-9 */
+        &:hover{
+            @include opacity(.6);
+        }
+    }
+}
+
+.onlyDk{
+    @media (max-width: 767px){
+        display: none;
+    }
+}
+
+.onlyMb{
+    @media (min-width: 768px) {
+        display: none;
+    }
+}
+

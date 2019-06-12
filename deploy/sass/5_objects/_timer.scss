@@ -1,0 +1,26 @@
+.timer {
+    @include flexbox(row, nowrap, flex-start, flex-start, center);
+    
+    @include e("block") {
+        @include flexbox(column, nowrap, center, center, center);
+        @include border-radius(10px);
+        background-color: $color-red;
+        width: 85px;
+        height: 85px;
+        text-align: center;
+
+        & > span{
+            @include fonte($second-font, 800, 35px, #FFF);
+        }
+
+        & > span + span {
+            @include fonte($second-font, 300, 16px, #FFF);
+        }
+        
+        @include m('hour'){
+            margin: 0px 10px;
+        }
+
+    }
+
+}
