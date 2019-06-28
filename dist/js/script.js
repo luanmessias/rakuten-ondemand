@@ -41,6 +41,11 @@ $('.close-modal').click(function(){
    $('.modal-overlay, .modal').toggleClass('active');
 });
 
+$('.rkod__faq__item').click(function(){
+   $('.rkod__faq__item').removeClass('active');
+   $(this).toggleClass('active');
+});
+
 $('.goTo').click(function (e) {
    e.preventDefault();
    var target = $($(this).attr('href'));
@@ -50,13 +55,14 @@ $('.goTo').click(function (e) {
 
    if (target.length) {
 
-      if(windowWidth <= breakPoint){
+      if($(window).innerWidth() <= breakPoint){
          var scrollTo = target.offset().top - 60;
       } else {
          var scrollTo = target.offset().top - 100;
       }
 
       $('body, html').animate({ scrollTop: scrollTo + 'px' }, 800);
+      
    }
 });
 

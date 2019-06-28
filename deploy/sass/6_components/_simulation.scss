@@ -1,0 +1,253 @@
+.rkod {
+    @include e('sim'){
+        background-color: $color-gray-extra-light;
+        padding-bottom: 100px;
+
+        .wrapper{
+            @include flexbox(row, wrap, space-between, flex-start, center);
+        }
+
+        @include e('form'){
+            width: 50%;
+
+            @include e('cont'){
+                @include flexbox(row, wrap, space-between, flex-start, center);
+            }
+
+            input{
+                @include flexbox(row, wrap, center, center, center);
+                @include fonte($second-font, 600, 16px, $color-gray);
+                @include box-sizing;
+                @include border-radius(10px);
+                box-shadow: none;
+                border: none;
+                text-align: center;
+                width: calc(50% - 10px);
+                margin-bottom: 20px;
+                height: 55px;
+            }
+
+            button{
+                @include flexbox(row, wrap, center, center, center);
+                @include fonte($second-font, 600, 16px, #FFF);
+                @include box-sizing;
+                @include transition;
+                @include border-radius(10px);
+                box-shadow: none;
+                margin-top: 10px;
+                width: 100%;
+                background-color: $color-red;
+                padding: 15px;
+                cursor: pointer;
+                border: 0px;
+                &:hover{
+                    background-color: $color-red-dark;
+                }
+            }
+
+            @include e('title'){
+                @include flexbox(row, wrap, flex-start, center, center);
+                @include fonte($second-font, 800, 26px, $color-gray-dark);
+                @include bgimage('icon_sim.png');
+                background-repeat: no-repeat;
+                height: 100px;
+                padding-left: 150px;
+                margin-bottom: 20px;
+            }
+        }
+
+        @include e('img'){
+            width: 50%;
+            img{
+                width: 100%;
+            }
+        }
+
+        table{
+            width: 100%;
+            border-collapse: collapse;
+            thead{
+                @include fonte($second-font, 400, 16px, $color-gray-extra-light);
+                background: $color-gray-dark;
+                overflow: hidden;
+                th{
+                    height: 45px;
+                    &:first-of-type{
+                        @include radiustl(10px);
+                    }
+                    &:last-of-type{
+                        @include radiustr(10px);
+                    }
+                }
+            }
+
+            tbody{
+                td{
+                    @include box-sizing;
+                    border: 1px solid $color-gray;
+                    height: 45px;
+                    text-align: center;
+                }
+            }
+
+        }
+
+
+
+
+
+        @include res-max(800px) {
+            table {
+                width: 100%;
+            }
+
+            table thead {
+                position: absolute;
+                z-index: 0;
+                visibility: hidden;
+            }
+
+            table tbody {
+                display: flex;
+                flex-flow: row wrap;
+            }
+
+            table tr {
+                box-sizing: border-box;
+                display: block;
+                background-color: #FFF;
+                border: 1px solid #CCC;
+                margin: 10px;
+            }
+
+            table td {
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: space-between;
+                padding: 15px;
+                font-size: 12px;
+                width: 100%;
+            }
+
+            table td:before {
+                content: attr(data-title);
+                padding-right: 15px;
+                white-space: nowrap;
+                text-align: left;
+                font-weight: bold;
+            }
+        }
+        
+
+        @include res-max(300px) {
+            @include e('img'){
+                display: none;
+            }
+            
+            @include e('form'){
+                width: 100%;
+                @include e('title'){
+                    background: none;
+                    padding: 0px;
+                    font-size: 20px;
+                    width: 100%;
+                    text-align: center;
+                }
+
+                input{
+                    width: 100%;
+                }
+            }
+
+            table{
+                tr{
+                    width: 100%;
+                    margin-left: 0px;
+                    margin-right: 0px;
+                }
+            }
+
+        }
+        @include res-between(301px, 400px) {
+            @include e('img'){
+                display: none;
+            }
+            
+            @include e('form'){
+                width: 100%;
+                @include e('title'){
+                    background: none;
+                    padding: 0px;
+                    font-size: 20px;
+                    width: 100%;
+                    text-align: center;
+                }
+
+                input{
+                    width: 100%;
+                }
+            }
+
+            table{
+                tr{
+                    width: 100%;
+                    margin-left: 0px;
+                    margin-right: 0px;
+                }
+            }
+        }
+        @include res-between(401px, 500px) {
+            @include e('img'){
+                display: none;
+            }
+            
+            @include e('form'){
+                width: 100%;
+                @include e('title'){
+                    background: none;
+                    padding: 0px;
+                    font-size: 20px;
+                    width: 100%;
+                    text-align: center;
+                }
+
+                input{
+                    width: 100%;
+                }
+            }
+
+            table{
+                tr{
+                    width: 100%;
+                    margin-left: 0px;
+                    margin-right: 0px;
+                }
+            }
+        }
+        @include res-between(501px, 600px) {
+            @include e('img'){
+                display: none;
+            }
+            
+            @include e('form'){
+                width: 100%;
+
+            }
+
+            table{
+                tr{
+                    width: 100%;
+                    margin-left: 0px;
+                    margin-right: 0px;
+                }
+            }
+        }
+        @include res-between(601px, 700px) {}
+        @include res-between(701px, 800px) {}
+        @include res-between(801px, 900px) {}
+        @include res-between(901px, 1000px) {}
+        @include res-min(1001px) {}
+
+
+    }
+}

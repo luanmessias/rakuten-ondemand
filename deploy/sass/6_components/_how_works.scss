@@ -1,5 +1,6 @@
-.rkod{
-    @include e('title'){
+.rkod {
+
+    @include e('title') {
         @include flexbox(column, wrap, flex-start, center, center);
         @include fonte($second-font, 800, 56px, #000);
         text-align: center;
@@ -7,7 +8,7 @@
         display: block;
         text-transform: uppercase;
 
-        &:after{
+        &:after {
             content: "";
             width: 65px;
             height: 8px;
@@ -18,30 +19,30 @@
 
     }
 
-    @include e('how'){
+    @include e('how') {
         position: relative;
-        height: 1000px;
+        height: 890px;
         overflow: hidden;
 
-        &:before{
+        &:before {
             content: "";
             width: 100%;
             position: absolute;
             bottom: 0px;
-            background-color: $color-gray-light;
+            background-color: $color-gray-extra-light;
             height: 105px;
         }
 
         .wrapper {
             @include flexbox(row, wrap, space-between, flex-start, flex-start);
 
-            > div {
+            >div {
                 width: calc(100% / 2 - 10px);
                 overflow: hidden;
             }
         }
 
-        @include e('img'){
+        @include e('img') {
             position: absolute;
             left: -470px;
             top: 150px;
@@ -49,21 +50,18 @@
             height: 850px;
         }
 
-        @include e('truck'){
-           
-        }
+        @include e('truck') {}
 
-        @include e('info'){
-            
-        }
+        @include e('info') {}
 
-        @include e('item'){
+        @include e('item') {
             @include flexbox(row, nowrap, flex-start, flex-start, flex-start);
             @include box-sizing;
             width: 100%;
             margin-bottom: 20px;
             padding-top: 10px;
-            &:before{
+
+            &:before {
                 @include border-radius(20px);
                 @include box-sizing;
                 content: "";
@@ -76,45 +74,46 @@
                 background-position: center;
             }
 
-            @include e('cont'){
+            @include e('cont') {
                 width: calc(100% - 100px);
             }
 
-            ul{
+            ul {
                 @include box-sizing;
                 margin: 10px 0px;
-                li{
+
+                li {
                     @include box-sizing;
                     width: 100%;
                 }
             }
 
-            @include m('box'){
-                &:before{
+            @include m('box') {
+                &:before {
                     background-image: url('../img/icon_box.png');
                 }
             }
 
-            @include m('money'){
-                &:before{
+            @include m('money') {
+                &:before {
                     background-image: url('../img/icon_money.png');
                 }
             }
 
-            @include m('calc'){
-                &:before{
+            @include m('calc') {
+                &:before {
                     background-image: url('../img/icon_calc.png');
                 }
             }
 
-            @include m('file'){
-                &:before{
+            @include m('file') {
+                &:before {
                     background-image: url('../img/icon_file.png');
                 }
             }
 
-            @include m('location'){
-                &:before{
+            @include m('location') {
+                &:before {
                     background-image: url('../img/icon_location.png');
                 }
             }
@@ -126,4 +125,302 @@
         }
 
     }
+
+    @include res-max(300px) {
+
+        @include e('title') {
+            display: flex;
+            font-size: 25px;
+
+            &:after {
+                height: 4px;
+            }
+        }
+
+        @include e('how') {
+            @include flexbox(column, wrap, flex-start, center, center);
+            height: auto;
+
+            &:before {
+                display: none;
+            }
+
+            .wrapper>div {
+                width: 100%;
+            }
+
+            @include e('img') {
+                @include order(2);
+                display: flex;
+                position: relative;
+                top: 0px;
+                left: 0px;
+                width: 100%;
+                height: auto;
+            }
+
+            @include e('info') {
+                @include flexbox(column, wrap, flex-start, center, center);
+                @include order(3);
+                width: 100%;
+            }
+        }
+
+    }
+
+    @include res-between(301px, 400px) {
+        @include e('title') {
+            display: flex;
+            font-size: 25px;
+
+            &:after {
+                height: 4px;
+            }
+        }
+
+        @include e('how') {
+            @include flexbox(column, wrap, flex-start, center, center);
+            height: auto;
+
+            &:before {
+                display: none;
+            }
+
+            .wrapper>div {
+                width: 100%;
+            }
+
+            @include e('img') {
+                @include order(2);
+                display: flex;
+                position: relative;
+                top: 0px;
+                left: 0px;
+                width: 100%;
+                height: auto;
+            }
+
+            @include e('info') {
+                @include flexbox(column, wrap, flex-start, center, center);
+                @include order(3);
+                width: 100%;
+            }
+
+        }
+
+    }
+
+    @include res-between(401px, 500px) {
+        @include e('title') {
+            display: flex;
+            font-size: 25px;
+
+            &:after {
+                height: 4px;
+            }
+        }
+
+        @include e('how') {
+            @include flexbox(column, wrap, flex-start, center, center);
+            height: auto;
+
+            &:before {
+                display: none;
+            }
+
+            .wrapper>div {
+                width: 100%;
+            }
+
+            @include e('img') {
+                @include order(2);
+                display: flex;
+                position: relative;
+                top: 0px;
+                left: 0px;
+                width: 100%;
+                height: auto;
+            }
+
+            @include e('info') {
+                @include flexbox(column, wrap, flex-start, center, center);
+                @include order(3);
+                width: 100%;
+            }
+
+        }
+
+    }
+
+    @include res-between(501px, 600px) {
+        @include e('title'){
+            display: flex;
+            font-size: 25px;
+            &:after{
+                height: 4px;
+            }
+        }
+       
+        @include e('how'){
+            @include flexbox(column, wrap, flex-start, center, center);
+            height: auto;
+
+            &:before{
+                display: none;
+            }
+            
+            .wrapper>div{
+                width: 100%;
+            }
+
+            @include e('img'){
+                @include order(2);
+                display: flex;
+                position: relative;
+                top: 0px;
+                left: 0px;
+                width: 100%;
+                height: auto;
+            }
+
+            @include e('info'){
+                @include flexbox(column, wrap, flex-start, center, center);
+                @include order(3);
+                width: 100%;
+            }
+             
+        }
+        
+    }
+
+    @include res-between(601px, 700px) {
+        @include e('title'){
+            display: flex;
+            font-size: 25px;
+            &:after{
+                height: 4px;
+            }
+        }
+       
+        @include e('how'){
+            @include flexbox(column, wrap, flex-start, center, center);
+            height: auto;
+
+            &:before{
+                display: none;
+            }
+            
+            .wrapper>div{
+                width: 100%;
+            }
+
+            @include e('img'){
+                @include order(2);
+                display: flex;
+                position: relative;
+                top: 0px;
+                left: 0px;
+                width: 100%;
+                height: auto;
+            }
+
+            @include e('info'){
+                @include flexbox(column, wrap, flex-start, center, center);
+                @include order(3);
+                width: 100%;
+            }
+             
+        }
+        
+    }
+
+    @include res-between(701px, 800px) {
+        @include e('title'){
+            display: flex;
+            font-size: 25px;
+            &:after{
+                height: 4px;
+            }
+        }
+       
+        @include e('how'){
+            @include flexbox(column, wrap, flex-start, center, center);
+            height: auto;
+
+            &:before{
+                display: none;
+            }
+            
+            .wrapper>div{
+                width: 100%;
+            }
+
+            @include e('img'){
+                @include order(2);
+                display: flex;
+                position: relative;
+                top: 0px;
+                left: 0px;
+                width: 100%;
+                height: auto;
+            }
+
+            @include e('info'){
+                @include flexbox(column, wrap, flex-start, center, center);
+                @include order(3);
+                width: 100%;
+            }
+             
+        }
+        
+    }
+
+    @include res-between(801px, 900px) {
+
+        @include e('title'){
+            display: flex;
+            font-size: 35px;
+            &:after{
+                height: 4px;
+            }
+        }
+       
+        @include e('how'){
+            @include flexbox(column, wrap, flex-start, center, center);
+            height: auto;
+
+            &:before{
+                display: none;
+            }
+            
+            .wrapper>div{
+                width: 100%;
+            }
+
+            @include e('img'){
+                @include order(2);
+                display: flex;
+                position: relative;
+                top: 0px;
+                left: 0px;
+                width: 100%;
+                height: auto;
+            }
+
+            @include e('info'){
+                @include flexbox(column, wrap, flex-start, center, center);
+                @include order(3);
+                width: 100%;
+            }
+             
+        }  
+
+    }
+
+    @include res-between(901px, 1000px) {}
+
+    @include res-min(1001px) {
+        
+    }
+
 }

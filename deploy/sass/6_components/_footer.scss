@@ -1,0 +1,91 @@
+.rkod {
+    
+    @include e('footer'){
+        @include bgimage('bg_footer.jpg');
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        padding: 20px 0px;
+
+        .wrapper{
+            @include flexbox(row, wrap, space-between, flex-start, center);
+        }
+
+        @include e('box'){
+            width: calc(100% / 3);
+        }
+
+        @include e('title'){
+            @include fonte($second-font, 400, 16px, #FFF);
+            width: 100%;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #FFF;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        @include e('link'){
+            @include fonte($second-font, 400, 14px, #FFF);
+            display: block;
+            margin: 10px 0px;
+        }
+
+        .fab {
+            &:before {
+                color: #FFF;
+                font-size: 20px;
+                margin: 10px;
+            }
+        }
+
+        .rkod__logo{
+            margin: 20px auto;
+        }
+
+    }
+
+
+    @include e('copy'){
+        text-align: center;
+        .wrapper{
+            @include fonte($second-font, 400, 16px, #000);
+            text-align: center;
+            padding: 20px 0px;
+        }
+    }
+
+    @include res-max(300px) {
+        @include e('footer'){
+            @include e('box'){
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    @include res-between(301px, 400px) {
+        @include e('footer'){
+            @include e('box'){
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    @include res-between(401px, 500px) {
+        @include e('footer'){
+            @include e('box'){
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+    }
+    
+    @include res-between(501px, 600px) {}
+    @include res-between(601px, 700px) {}
+    @include res-between(701px, 800px) {}
+    @include res-between(801px, 900px) {}
+    @include res-between(901px, 1000px) {}
+    @include res-min(1001px) {}
+
+}

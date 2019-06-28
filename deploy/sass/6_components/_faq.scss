@@ -1,0 +1,78 @@
+.rkod {
+    @include e('faq'){
+        padding-bottom: 100px;
+
+        .wrapper{
+            @include flexbox(row, wrap, space-between, flex-start, center);
+        }
+
+        @include e('item'){
+            @include box-sizing;
+            @include transition;
+            width: 100%;
+            border-top: 1px solid $color-gray-light;
+            padding: 15px;
+
+            &:hover{
+                background-color: $color-gray-extra-light;
+            }
+
+            &.active{
+                background-color: $color-gray-extra-light;
+                .rkod__faq__question{
+                    &:after{
+                        @include set-icon($fa-var-angle-up, 35px, 900, $color-gray);
+                    }
+                }
+
+                .rkod__faq__answer{
+                    display: block;
+                }
+            }
+        }
+        
+
+        @include e('question'){
+            @include flexbox(row, nowrap, space-between, center, center);
+            @include fonte($second-font, 800, 24px, $color-gray);
+
+            &:after{
+                @include set-icon($fa-var-angle-down, 35px, 900, $color-gray);
+                margin-left: 20px;
+            }
+
+        }
+
+
+        @include e('answer'){
+            @include fonte($second-font, 400, 14px, $color-gray);
+            display: none;
+            margin-top: 10px;
+        }
+
+
+        @include res-max(300px) {
+            @include e('question'){
+                font-size: 20px;
+            }
+        }
+        @include res-between(301px, 400px) {
+            @include e('question'){
+                font-size: 20px;
+            }
+        }
+        @include res-between(401px, 500px) {
+            @include e('question'){
+                font-size: 20px;
+            }
+        }
+        @include res-between(501px, 600px) {}
+        @include res-between(601px, 700px) {}
+        @include res-between(701px, 800px) {}
+        @include res-between(801px, 900px) {}
+        @include res-between(901px, 1000px) {}
+        @include res-min(1001px) {}
+
+
+    }
+}
