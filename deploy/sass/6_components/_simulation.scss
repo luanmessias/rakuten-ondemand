@@ -129,13 +129,14 @@
                 width: 100%;
             }
 
-            table td:before {
+            table td:after {
                 content: attr(data-title);
                 padding-right: 15px;
                 white-space: nowrap;
                 text-align: left;
                 font-weight: bold;
             }
+            
         }
         
 
@@ -247,7 +248,6 @@
         @include res-between(801px, 900px) {}
         @include res-between(901px, 1000px) {}
         @include res-min(1001px) {}
-
 
     }
 }

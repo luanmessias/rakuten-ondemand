@@ -128,11 +128,25 @@ $(window).scroll(function () {
 
 //Ready functions
 $(document).ready(function () {
-   
+
+   var smlt = new Simulator();
+   console.log(smlt.simulate(1651,51651,651651,651651,651651,651651));
+
+   calcSmlt = function(){
+      var originZipcode = $('#originZipcode').val();
+      var destinationZipCode = $('#originZipcode').val();
+      var boxWeight = $('#boxWeight').val();
+      var boxWidth = $('#boxWidth').val();
+      var boxHeight = $('#boxHeight').val();
+      var boxLength = $('#boxLength').val();
+
+      console.log(smlt.simulate(originZipcode,destinationZipCode,boxWeight,boxWidth,boxHeight,boxLength));
+   };
+
+   //console.log(smlt.simulate(516561,51551615,1651515,51516551,56151651651,5615616551));
 });
 
 //On Load functions
 $(window).on('load', function () {
-   
-});
 
+});
