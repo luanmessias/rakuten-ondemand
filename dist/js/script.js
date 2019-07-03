@@ -1,5 +1,61 @@
 var breakPoint = 850;
 
+const data = {
+   "content": [
+       {
+           "type": "OnDemandWithoutPlan",
+           "type_description": "Recarga avulsa",
+           "postage_services": [
+               {
+                   "name": "SEDEX",
+                   "final_cost": 25.00,
+                   "variation": -5.00
+               },
+               {
+                   "name": "PAC",
+                   "final_cost": 15.00,
+                   "variation": -5.00
+               }
+           ]
+       },
+       {
+           "type": "OnDemandWithPlan",
+           "type_description": "Plano mensal",
+           "postage_services": [
+               {
+                   "name": "SEDEX",
+                   "final_cost": 23.00,
+                   "variation": -7.00
+               },
+               {
+                   "name": "PAC",
+                   "final_cost": 13.00,
+                   "variation": -7.00
+               }
+           ]
+       },
+       {
+           "type": "Standard",
+           "type_description": "Balcão",
+           "postage_services": [
+               {
+                   "name": "SEDEX",
+                   "final_cost": 30.00,
+                   "variation": 0.00
+               },
+               {
+                   "name": "PAC",
+                   "final_cost": 20.00,
+                   "variation": 0.00
+               }
+           ]
+       }
+   ],
+   "status": "OK",
+   "messages": []
+}
+
+
 
 //Functions
 function isScrolledIntoView(elem) {
@@ -130,23 +186,54 @@ $(window).scroll(function () {
 $(document).ready(function () {
 
    var smlt = new Simulator();
-   console.log(smlt.simulate(1651,51651,651651,651651,651651,651651));
+   console.log(smlt.simulate(25,30,15,45,32,15));
 
    calcSmlt = function(){
-      var originZipcode = $('#originZipcode').val();
-      var destinationZipCode = $('#originZipcode').val();
-      var boxWeight = $('#boxWeight').val();
-      var boxWidth = $('#boxWidth').val();
-      var boxHeight = $('#boxHeight').val();
-      var boxLength = $('#boxLength').val();
+      //Form input
+      let originZipcode = $('#originZipcode').val();
+      let destinationZipCode = $('#originZipcode').val();
+      let boxWeight = $('#boxWeight').val();
+      let boxWidth = $('#boxWidth').val();
+      let boxHeight = $('#boxHeight').val();
+      let boxLength = $('#boxLength').val();
 
-      console.log(smlt.simulate(originZipcode,destinationZipCode,boxWeight,boxWidth,boxHeight,boxLength));
+      //Data values
+      let valPacUniteCharge = `R$ ${data.content[0].postage_services[1].final_cost},00`;
+      let valPacMonthlyPlan = `R$ ${data.content[1].postage_services[1].final_cost},00`;
+      let valPacBalconyPlan = `R$ ${data.content[2].postage_services[1].final_cost},00`;
+      let valSedexUniteCharge = `R$ ${data.content[0].postage_services[0].final_cost},00`;
+      let valSedexMonthlyPlan = `R$ ${data.content[1].postage_services[0].final_cost},00`;
+      let valSedexBalconyPlan = `R$ ${data.content[2].postage_services[0].final_cost},00`;
+
+      //Table cells
+      let tabPacUniteCharge = document.querySelector('.tr_pac td[data-title="Recarga Avulsa"]');
+      let tabPacMonthlyPlan = document.querySelector('.tr_pac td[data-title="Plano Mensal"]');
+      let tabPacBalconyPlan = document.querySelector('.tr_pac td[data-title="Custo de Balcão do Frete"]');
+      let tabSedexUniteCharge = document.querySelector('.tr_sedex td[data-title="Recarga Avulsa"]');
+      let tabSedexMonthlyPlan = document.querySelector('.tr_sedex td[data-title="Plano Mensal"]');
+      let tabSedexBalconyPlan = document.querySelector('.tr_sedex td[data-title="Custo de Balcão do Frete"]');
+
+
+      //Insert data
+      tabPacUniteCharge.innerHTML = valPacUniteCharge;
+      tabPacMonthlyPlan.innerHTML = valPacMonthlyPlan;
+      tabPacBalconyPlan.innerHTML = valPacBalconyPlan;
+      tabSedexUniteCharge.innerHTML = valSedexUniteCharge;
+      tabSedexMonthlyPlan.innerHTML = valSedexMonthlyPlan;
+      tabSedexBalconyPlan.innerHTML = valSedexBalconyPlan;
+
+
+      //console.log(smlt.simulate(originZipcode,destinationZipCode,boxWeight,boxWidth,boxHeight,boxLength));
+
+
    };
 
-   //console.log(smlt.simulate(516561,51551615,1651515,51516551,56151651651,5615616551));
+   calcSmlt();
+   
 });
 
 //On Load functions
 $(window).on('load', function () {
-
+   
 });
+

@@ -1,0 +1,56 @@
+{
+    "content": [
+      {
+        "type": "OnDemandWithoutPlan",
+        "type_description": "Recarga avulsa",
+        "postage_services": [
+          {
+            "name": "SEDEX",
+            "final_cost": 25.00,
+            "variation": -5.00
+          },
+          {
+            "name": "PAC",
+            "final_cost": 15.00,
+            "variation": -5.00
+          }
+        ]
+      },
+      {
+        "type": "OnDemandWithPlan",
+        "type_description": "Plano mensal",
+        "postage_services": [
+          {
+            "name": "SEDEX",
+            "final_cost": 23.00,
+            "variation": -7.00
+          },
+          {
+            "name": "PAC",
+            "final_cost": 13.00,
+            "variation": -7.00
+          }
+        ]
+      },
+      {
+        "type": "Standard",
+        "type_description": "Balcão",
+        "postage_services": [
+          {
+            "name": "SEDEX",
+            "final_cost": 30.00,
+            "variation": 0.00
+          },
+          {
+            "name": "PAC",
+            "final_cost": 20.00,
+            "variation": 0.00
+          }
+        ]
+      }
+    ],
+    "status": "OK",
+    "messages": [
+       
+    ]
+  }

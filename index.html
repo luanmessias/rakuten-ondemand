@@ -145,15 +145,16 @@
     <div id="section-3" class="rkod__sim">
         <div class="wrapper">
             <h1 class="rkod__title">SIMULAÇÃO</h1>
+            <p></p>
             <div class="rkod__sim__form">
                 <div class="rkod__sim__form__title"> Insira os dados do produto embalado: </div>
                 <div class="rkod__sim__form__cont">
-                    <input type="text" placeholder="CEP origem" id="originZipcode">
-                    <input type="text" placeholder="CEP destino" id="destinationZipCode">
-                    <input type="text" placeholder="Peso (kg)" id="boxWeight">
-                    <input type="text" placeholder="Altura (cm)" id="boxHeight">
-                    <input type="text" placeholder="Largura (cm)" id="boxWidth">
-                    <input type="text" placeholder="Comprimento (cm)" id="boxLength">
+                    <input type="number" placeholder="CEP origem" id="originZipcode">
+                    <input type="number" placeholder="CEP destino" id="destinationZipCode">
+                    <input type="number" placeholder="Peso (kg)" id="boxWeight">
+                    <input type="number" placeholder="Altura (cm)" id="boxHeight">
+                    <input type="number" placeholder="Largura (cm)" id="boxWidth">
+                    <input type="number" placeholder="Comprimento (cm)" id="boxLength">
                     <button>SIMULAR</button>
                 </div>
             </div>
@@ -170,35 +171,35 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td data-title="Vantagens"><strong>PAC</strong></td>
-                        <td data-title="Recarga Avulsa"></td>
-                        <td data-title="Plano Mensal"></td>
-                        <td data-title="Custo de Balcão do Frete"></td>
+                    <tr class="tr_pac">
+                        <td required data-title="Vantagens"><strong>PAC</strong></td>
+                        <td required data-title="Recarga Avulsa"></td>
+                        <td required data-title="Plano Mensal"></td>
+                        <td required data-title="Custo de Balcão do Frete"></td>
                     </tr>
-                    <tr>
-                        <td data-title="Vantagens"><strong>SEDEX</strong></td>
-                        <td data-title="Recarga Avulsa"></td>
-                        <td data-title="Plano Mensal"></td>
-                        <td data-title="Custo de Balcão do Frete"></td>
+                    <tr class="tr_sedex">
+                        <td required data-title="Vantagens"><strong>SEDEX</strong></td>
+                        <td required data-title="Recarga Avulsa"></td>
+                        <td required data-title="Plano Mensal"></td>
+                        <td required data-title="Custo de Balcão do Frete"></td>
                     </tr>
-                    <tr>
-                        <td data-title="Vantagens"><strong>SEDEX 10</strong></td>
-                        <td data-title="Recarga Avulsa"></td>
-                        <td data-title="Plano Mensal"></td>
-                        <td data-title="Custo de Balcão do Frete"></td>
+                    <tr class="tr_sedex10">
+                        <td required data-title="Vantagens"><strong>SEDEX 10</strong></td>
+                        <td required data-title="Recarga Avulsa"></td>
+                        <td required data-title="Plano Mensal"></td>
+                        <td required data-title="Custo de Balcão do Frete"></td>
                     </tr>
-                    <tr>
-                        <td data-title="Vantagens"><strong>SEDEX 12</strong></td>
-                        <td data-title="Recarga Avulsa"></td>
-                        <td data-title="Plano Mensal"></td>
-                        <td data-title="Custo de Balcão do Frete"></td>
+                    <tr class="tr_sedex12">
+                        <td required data-title="Vantagens"><strong>SEDEX 12</strong></td>
+                        <td required data-title="Recarga Avulsa"></td>
+                        <td required data-title="Plano Mensal"></td>
+                        <td required data-title="Custo de Balcão do Frete"></td>
                     </tr>
-                    <tr>
-                        <td data-title="Vantagens"><strong>SEDEX HOJE</strong></td>
-                        <td data-title="Recarga Avulsa"></td>
-                        <td data-title="Plano Mensal"></td>
-                        <td data-title="Custo de Balcão do Frete"></td>
+                    <tr class="tr_sedex_hoje">
+                        <td required data-title="Vantagens"><strong>SEDEX HOJE</strong></td>
+                        <td required data-title="Recarga Avulsa"></td>
+                        <td required data-title="Plano Mensal"></td>
+                        <td required data-title="Custo de Balcão do Frete"></td>
                     </tr>
                 </tbody>
             </table>

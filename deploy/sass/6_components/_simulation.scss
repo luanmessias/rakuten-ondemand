@@ -66,6 +66,13 @@
         table{
             width: 100%;
             border-collapse: collapse;
+
+            .tr_sedex10,
+            .tr_sedex12,
+            .tr_sedex_hoje{
+                display: none;
+            }
+
             thead{
                 @include fonte($second-font, 400, 16px, $color-gray-extra-light);
                 background: $color-gray-dark;
