@@ -27,7 +27,7 @@
                 }
 
                 @include m('title'){
-                    @include fonte($second-font, 800, 26px, #000);
+                    @include fonte($second-font, 600, 26px, #000);
                 }
             }
 
@@ -42,7 +42,7 @@
 
                 .rkod__plan__card__line{
                     @include flexbox(row, wrap, flex-end, center, center);
-                    @include fonte($second-font, 800, 24px, $color-gray);
+                    @include fonte($second-font, 600, 24px, #000);
                 }
 
             }

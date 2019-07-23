@@ -2,7 +2,7 @@
 
     @include e('title') {
         @include flexbox(column, wrap, flex-start, center, center);
-        @include fonte($second-font, 800, 56px, #000);
+        @include fonte($second-font, 600, 56px, #000);
         text-align: center;
         width: 100%;
         display: block;
@@ -84,7 +84,12 @@
 
                 li {
                     @include box-sizing;
+                    font-size: 15px;
                     width: 100%;
+                    text-transform: lowercase;
+                    &::first-letter{
+                        text-transform: uppercase;
+                    }
                 }
             }
 

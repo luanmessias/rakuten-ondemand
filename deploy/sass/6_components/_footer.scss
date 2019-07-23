@@ -25,9 +25,26 @@
         }
 
         @include e('link'){
+            @include flexbox(row, wrap, flex-start, center, center);
             @include fonte($second-font, 400, 14px, #FFF);
             display: block;
             margin: 10px 0px;
+
+            @include m('mail'){
+                &:before{
+                    @include set-icon($fa-var-envelope, 18px, 900, #FFF);
+                    margin-right: 10px;
+                }
+            }
+
+            @include m('phone'){
+                &:before{
+                    @include set-icon($fa-var-phone, 18px, 900, #FFF);
+                    margin-right: 10px;
+                }
+            }
+
+
         }
 
         .fab {

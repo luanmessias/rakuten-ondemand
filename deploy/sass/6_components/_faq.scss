@@ -34,7 +34,7 @@
 
         @include e('question'){
             @include flexbox(row, nowrap, space-between, center, center);
-            @include fonte($second-font, 800, 24px, $color-gray);
+            @include fonte($second-font, 800, 24px, #000);
 
             &:after{
                 @include set-icon($fa-var-angle-down, 35px, 900, $color-gray);

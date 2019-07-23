@@ -86,7 +86,13 @@ $.fn.toggle2classes = function (class1, class2) {
    });
 };
 
+
+
 //On Click functions
+$('button').click(function () { 
+   calcSmlt();
+});
+
 $('.speaker__photo').click(function(){
    $('.modal-content').html('');
    $(this).parent().clone().appendTo(".modal-content");
@@ -213,7 +219,6 @@ $(document).ready(function () {
       let tabSedexMonthlyPlan = document.querySelector('.tr_sedex td[data-title="Plano Mensal"]');
       let tabSedexBalconyPlan = document.querySelector('.tr_sedex td[data-title="Custo de Balcão do Frete"]');
 
-
       //Insert data
       tabPacUniteCharge.innerHTML = valPacUniteCharge;
       tabPacMonthlyPlan.innerHTML = valPacMonthlyPlan;
@@ -224,11 +229,9 @@ $(document).ready(function () {
 
 
       //console.log(smlt.simulate(originZipcode,destinationZipCode,boxWeight,boxWidth,boxHeight,boxLength));
-
-
    };
 
-   calcSmlt();
+   
    
 });
 

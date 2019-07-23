@@ -9,8 +9,11 @@
         height: auto;
         min-height: 700px;
 
+
         .wrapper{
             @include flexbox(column, wrap, center, center, center);
+            position: relative;
+            top: 60px;
         }
 
         @include e('logo'){
